@@ -4,7 +4,11 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
-dotenv.config(); // Load environment variables
+// Import the auth routes
+import authRoutes from './routes/auth';
+import noteRoutes from './routes/notes'; // <-- 1. ADD THIS LINE
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -30,7 +34,10 @@ app.get('/', (req: Request, res: Response) => {
   res.json({ message: 'Welcome to the Notes App API!' });
 });
 
-// We will add our auth routes here later
+// --- API Routes ---
+// Use the auth routes for any request to /api/auth
+app.use('/api/auth', authRoutes);
+app.use('/api/notes', noteRoutes); // <-- 2. AND ADD THIS LINE
 
 // --- Start the Server ---
 app.listen(PORT, () => {

@@ -1,13 +1,20 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SignupPage from './pages/SignupPage';
+import LoginPage from './pages/LoginPage'; // <-- 1. ADD THIS IMPORT
+import DashboardPage from './pages/DashboardPage';
 
-function App() {
+function App(): React.ReactElement {
   return (
-    // Add some Tailwind classes here to test!
-    <div className="min-h-screen bg-slate-900 flex items-center justify-center">
-      <h1 className="text-5xl font-bold text-cyan-400">
-        Tailwind is Working!
-      </h1>
-    </div>
+    <Router>
+      <div className="bg-white min-h-screen">
+        <Routes>
+          <Route path="/" element={<SignupPage />} />
+          <Route path="/login" element={<LoginPage />} /> {/* <-- 2. ADD THIS ROUTE */}
+          <Route path="/dashboard" element={<DashboardPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
