@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://note-taking-app-6jq8.onrender.com',
 });
 
 // Interceptor to add the JWT token to every request
