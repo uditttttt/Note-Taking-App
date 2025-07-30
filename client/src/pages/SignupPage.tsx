@@ -29,7 +29,7 @@ const SignupPage: React.FC = () => {
     setIsLoading(true);
     setError(null);
     try {
-      await axios.post('http://localhost:5000/api/auth/send-otp', {
+      await axios.post('https://note-taking-app-6jq8.onrender.com/api/auth/send-otp', {
         name: formData.name,
         email: formData.email,
       });
@@ -45,7 +45,7 @@ const SignupPage: React.FC = () => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/signup', {
+      const response = await axios.post('https://note-taking-app-6jq8.onrender.com/api/auth/signup', {
         email: formData.email,
         otp: formData.otp,
       });
@@ -71,7 +71,7 @@ const SignupPage: React.FC = () => {
     setIsLoading(true);
     setError(null);
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/google', {
+      const res = await axios.post('https://note-taking-app-6jq8.onrender.com/api/auth/google', {
         token: credentialResponse.credential,
       });
       login(res.data.token, res.data.user);
