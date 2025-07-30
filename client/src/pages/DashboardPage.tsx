@@ -14,7 +14,7 @@ interface Note {
 
 const Logo: React.FC = () => (
     <div className="flex items-center space-x-2">
-      <img src="/assets/your-logo-filename.png" alt="HD Logo" className="w-7 h-7" />
+      <img src="/assets/dalogo.png" alt="HD Logo" className="w-15 h-15" />
       <span className="text-xl font-bold text-black">Dashboard</span>
     </div>
   );
